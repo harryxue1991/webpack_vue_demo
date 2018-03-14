@@ -6,7 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 let commonConfig = {
     entry: {
         main: path.resolve(__dirname, 'src/main'),
-        vendors: ['vue','vue-router']
+        vendors: ['vue','vue-router','vuex','axios']
     },
     module: {
         rules: [{
@@ -49,7 +49,10 @@ let commonConfig = {
     },
     resolve: {
         alias: {
-            styles: path.resolve(__dirname, 'src/styles/')
+            styles: path.resolve(__dirname, 'src/styles/'),
+            image: path.resolve(__dirname, 'src/images/'),
+            components: path.resolve(__dirname, 'src/components'),
+            pages: path.resolve(__dirname, 'src/pages/')
         },
         extensions: ['.js']
     },
@@ -58,7 +61,8 @@ let commonConfig = {
         new HtmlWebpackPlugin({
             template: './template.ejs',
             title: '尖叫蕈',
-            inject: 'body'
+            inject: 'body',
+            favicon: './src/images/favicon.ico'
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors'

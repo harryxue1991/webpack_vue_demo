@@ -9,13 +9,15 @@ module.exports = merge(common, {
         publicPath: '/',
         filename: '[name].[hash:8].js'
     },
+    devtool: "#source-map",
     devServer: {
         port: 9999,
         hot: true,
         // 热更新
         // inline: true,
         // 文件更新，页面自动刷新
-        historyApiFallback: true
+        historyApiFallback: true,
+        stats: "errors-only"
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()

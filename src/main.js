@@ -1,13 +1,16 @@
-import 'styles/main.scss';
+import 'styles/main.scss'
+import 'element-ui/lib/theme-chalk/index.css'
 
 import Vue from 'vue'
+import ElementUI from 'element-ui'
 import App from './App.vue'
 
 import VueRouter from 'vue-router'
 
 import routers from './routers'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+Vue.use(ElementUI);
 
 const router = new VueRouter({
     mode: 'history',

@@ -1,20 +1,28 @@
 <template>
     <div>
+        <Header :activeIndex="activeIndex"></Header>
         <div class="hello">
             <span @click="clickme">hello world</span>
             <div class="name">{{msg}}</div>
             <div>
-                <img class="img" src="../images/picture.png" alt="">
+                <img class="img" src="~image/index/picture.png" alt="">
             </div>
         </div>
     </div>
 </template>
 <script>
+import Header from 'components/Header/Header.vue'
 export default {
     data() {
         return {
+            activeIndex:'/',
             msg: '薛辛超'
         }
+    },
+    components: {
+        Header,
+    },
+    mounted() {
     },
     methods: {
         clickme() {

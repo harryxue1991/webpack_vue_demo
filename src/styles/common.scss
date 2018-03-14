@@ -1,21 +1,30 @@
 //common
-$commonFontColor : #888;
-$commonColorGreen : #29D0A2;
-$commonBorderColor : #e5e5e5;
-$commonBackgroundColor : #FAFAFA;
+//background
+$commonBackgroundColor: #fafafa;
+
+//color
+$C-title: #253338;
+$C-content: #526E7A;
+$C-assist: #789F9C;
+$C-warning: #f66d60;
+$C-green: #84d156;
+$C-blue: #27A9F7;
 
 //z-index
 $level-1 : 1000;
-$level-2 : 900;
-$level-3 : 800;
-$level-4 : 700;
-$level-5 : 600;
+$level-2 : 800;
+$level-3 : 500;
+$level-4 : 300;
+$level-5 : 100;
 
-//page
-html, body{
-    background: $commonBackgroundColor;
-}
+//size
+$H-header: 60px;
+$H-footer: 100px;
+$H-main: calc(100% - #{$H-header + $H-footer});
 
-.g-page{
-    background: $commonBackgroundColor;
+//wap端设计需要
+$font:16;  //基础font-size
+$screen:750; //设计稿宽度
+@function px2rem($n){
+        @return #{$n/($screen*$font/320)}rem
 }
