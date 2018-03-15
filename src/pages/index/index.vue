@@ -4,23 +4,18 @@
         <div class="hello">
             <span @click="clickme">hello world</span>
             <div class="name">{{msg}}</div>
-            <div>
-                <img class="img" src="~image/index/picture.png" alt="">
-            </div>
         </div>
     </div>
 </template>
 <script>
 import Header from 'components/Header/Header.vue'
 export default {
-    data() {
-        return {
-            activeIndex:'/',
-            msg: '薛辛超'
-        }
-    },
+    data:() => ({
+        activeIndex:'/',
+        msg: '薛辛超'
+    }),
     components: {
-        Header,
+        Header
     },
     mounted() {
     },

@@ -41,6 +41,12 @@ table {
 a{
     text-decoration: none;
 }
+.fl{
+    float: left;
+}
+.fr {
+    float: right;
+}
 //page
 html, body{
     background: $commonBackgroundColor;

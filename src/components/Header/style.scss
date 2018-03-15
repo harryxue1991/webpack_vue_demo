@@ -1,7 +1,17 @@
 .header {
-        height: $H-header;
-        line-height: $H-header;
-        border-bottom: 1px solid #ccc;
-        color: pink;
-        box-sizing: border-box;
+    height: $H-header;
+    line-height: $H-header;
+    border-bottom: 1px solid #ccc;
+    color: pink;
+    box-sizing: border-box;
+    span {
+        margin-right: 20px;
+    }
+    img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 15px 15px 0 0;
+        float: right;
+    }
 }

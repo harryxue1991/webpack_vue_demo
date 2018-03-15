@@ -11,18 +11,27 @@
                         active-text-color="#ffd04b">
                         <el-menu-item index="/">首页</el-menu-item>
                         <el-menu-item index="/home">home</el-menu-item>
+                        <div class="fr">
+                            <span v-text="name"></span>
+                            <img src="~image/index/picture.png" alt="">
+                        </div>
                 </el-menu>
         </div>
 </template>
 <script>
+import { mapState } from 'vuex';
 export default {
         props: ['activeIndex'],
-        data(){
-                return{
-                        
-                }
+        data:() => ({
+
+        }),
+        computed: {
+                ...mapState({
+                        name: "name"
+                })
         },
         mounted(){
+
         },
         methods:{
                 handleSelect(key, keyPath) {

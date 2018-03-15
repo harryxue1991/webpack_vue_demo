@@ -54,7 +54,7 @@ let commonConfig = {
             components: path.resolve(__dirname, 'src/components'),
             pages: path.resolve(__dirname, 'src/pages/')
         },
-        extensions: ['.js']
+        extensions: ['.js','.vue']
     },
     plugins: [
         new ExtractTextPlugin('style.[contenthash:8].css'),
@@ -62,7 +62,7 @@ let commonConfig = {
             template: './template.ejs',
             title: '尖叫蕈',
             inject: 'body',
-            favicon: './src/images/favicon.ico'
+            favicon: 'favicon.ico'
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors'
