@@ -1,43 +1,46 @@
 <template>
-        <div class="header">
-                <el-menu
-                        :default-active="activeIndex"
-                        class="el-menu-demo"
-                        mode="horizontal"
-                        @select="handleSelect"
-                        background-color="#545c64"
-                        text-color="#fff"
-                        :router="true"
-                        active-text-color="#ffd04b">
-                        <el-menu-item index="/">首页</el-menu-item>
-                        <el-menu-item index="/home">home</el-menu-item>
-                        <div class="fr">
-                            <span v-text="name"></span>
-                            <img src="~image/index/picture.png" alt="">
-                        </div>
-                </el-menu>
-        </div>
+    <div class="header">
+        <el-menu
+            :default-active="activeIndex"
+            class="el-menu-demo"
+            mode="horizontal"
+            @select="handleSelect"
+            background-color="#545c64"
+            text-color="#fff"
+            :router="true"
+            active-text-color="#ffd04b">
+            <el-menu-item index="/">首页</el-menu-item>
+            <el-menu-item index="/home">home</el-menu-item>
+            <div class="fr">
+                <span v-text="name"></span>
+                <img src="~image/index/picture.png" alt="">
+            </div>
+        </el-menu>
+    </div>
 </template>
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 export default {
-        props: ['activeIndex'],
-        data:() => ({
+    props: ['activeIndex'],
+    data:() => ({
 
+    }),
+    computed: {
+        ...mapState({
+            name: "name"
+        })
+    },
+    mounted(){
+
+    },
+    methods:{
+        ...mapMutations({
+            change: 'changeName'
         }),
-        computed: {
-                ...mapState({
-                        name: "name"
-                })
-        },
-        mounted(){
-
-        },
-        methods:{
-                handleSelect(key, keyPath) {
-                        // console.log(key, keyPath);
-                }
-        },
+        handleSelect(key, keyPath) {
+            // console.log(key, keyPath);
+        }
+    },
 }
 </script>
 <style lang="scss" scoped>
