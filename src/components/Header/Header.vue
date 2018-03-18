@@ -12,6 +12,7 @@
             <el-menu-item index="/">首页</el-menu-item>
             <el-menu-item index="/home">home</el-menu-item>
             <div class="fr">
+                <input type="text" v-model="myname" @keydown.enter="change(myname)">
                 <span v-text="name"></span>
                 <img src="~image/index/picture.png" alt="">
             </div>
@@ -23,9 +24,12 @@ import { mapState, mapMutations } from 'vuex';
 export default {
     props: ['activeIndex'],
     data:() => ({
-
+        myname: ''
     }),
     computed: {
+        // name () {
+        //     return this.$store.state.name
+        // }
         ...mapState({
             name: "name"
         })
