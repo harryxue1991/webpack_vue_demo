@@ -2,43 +2,58 @@
     <div>
         <Header :activeIndex="activeIndex"></Header>
         <div class="hello">
-            <span @click="clickme">hello world</span>
-            <div class="name">{{msg}}</div>
+            <div class="name">{{msg}}喜欢吃</div>
+            <div class="clearfix">
+                <div v-for="(item , index) in like" :key="index" class="fruit">
+                    {{item.Fruit}}
+                </div>
+            </div>
+            <div class="name2">{{msg2}}喜欢吃</div>
+            <div class="fruit" v-text="doneLike(3).Fruit"></div>
         </div>
     </div>
 </template>
 <script>
 import Header from 'components/Header/Header.vue'
+import { mapState, mapGetters } from 'vuex';
 export default {
     data:() => ({
         activeIndex:'/',
-        msg: '薛辛超'
+        msg: '薛辛超',
+        msg2: '小葱'
     }),
     components: {
         Header
     },
+    computed: {
+        ...mapState({
+            like: "like"
+        }),
+        ...mapGetters([
+            'doneLike',
+        ])
+    },
     mounted() {
+
     },
     methods: {
-        clickme() {
-            alert(1);
-        }
+
     }
 }
 </script>
 <style lang="scss">
     .hello {
         color: red;
-        span {
-            background-color: pink;
-            cursor: pointer;
-            font-size: 18px;
-        }
         .name {
-            color: black;
+            color: peru;
         }
-        .img {
-            width: 100px;
+        .name2 {
+            color: plum;
+            margin-top: 30px;
+        }
+        .fruit {
+            float: left;
+            margin-right: 30px;
         }
     }
 </style>

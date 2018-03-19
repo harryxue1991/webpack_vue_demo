@@ -52,7 +52,8 @@ let commonConfig = {
             styles: path.resolve(__dirname, 'src/styles/'),
             image: path.resolve(__dirname, 'src/images/'),
             components: path.resolve(__dirname, 'src/components'),
-            pages: path.resolve(__dirname, 'src/pages/')
+            pages: path.resolve(__dirname, 'src/pages/'),
+            json: path.resolve(__dirname, 'src/json/')
         },
         extensions: ['.js','.vue']
     },

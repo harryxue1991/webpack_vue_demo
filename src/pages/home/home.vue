@@ -1,8 +1,10 @@
 <template>
     <div>
         <Header :activeIndex="activeIndex"></Header>
-        <div class="hello">你好</div>
         <router-view></router-view>
+        <div>
+            
+        </div>
     </div>
 </template>
 <script>
@@ -14,6 +16,11 @@ export default {
     }),
     components: {
         Header
+    },
+    mounted() {
+        this.axios.get('src/json/person.json').then((response) => {
+            console.log(response.data);
+        })
     }
 };
 </script>
