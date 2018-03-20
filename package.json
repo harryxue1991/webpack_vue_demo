@@ -33,6 +33,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.2.1",
+    "lodash": "^4.17.5",
+    "lodash-webpack-plugin": "^0.11.4",
     "vue": "^2.5.13",
     "vue-axios": "^2.0.2",
     "vue-router": "^3.0.1",

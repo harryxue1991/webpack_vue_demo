@@ -11,6 +11,7 @@
             active-text-color="#ffd04b">
             <el-menu-item index="/">首页</el-menu-item>
             <el-menu-item index="/home">home</el-menu-item>
+            <el-menu-item index="/page">page</el-menu-item>
             <div class="fr">
                 <input type="text" v-model="myname" @keydown.enter="change(myname)">
                 <span v-text="name"></span>

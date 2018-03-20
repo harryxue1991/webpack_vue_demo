@@ -1,16 +1,14 @@
-import Index from 'pages/index/index';
-import Home from 'pages/home/home';
 import Home1 from 'pages/home/myhome/home1';
 import Home2 from 'pages/home/myhome/home2';
 
 const routers = [
     {
         path: '/',
-        component: Index
+        component: () => import('./pages/index/index')
     },
     {
         path: '/home',
-        component: Home,
+        component: () => import('./pages/home/home'),
         children: [
             {
                 path: '/home1',
@@ -21,6 +19,10 @@ const routers = [
                 component: Home2,
             }
         ]
+    },
+    {
+        path: '/page',
+        component: () => import('./pages/page/page'),
     }
 ]
 export default routers
